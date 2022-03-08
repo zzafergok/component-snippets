@@ -1,0 +1,10 @@
+a {
+  color: #000;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: #353232 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #144e7d;
+}
