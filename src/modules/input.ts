@@ -1,7 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { CSSObject } from "@emotion/react";
-
-export interface Props {
+export interface InputProps {
   type?:
     | "checkbox"
     | "color"
@@ -53,4 +50,5 @@ export interface Props {
   height?: string;
   icon?: string;
   className?: string;
+  defaultValue?: string;
 }
