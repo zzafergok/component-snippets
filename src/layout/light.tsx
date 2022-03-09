@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../block/header";
 import Footer from "../block/footer";
 
@@ -10,7 +9,6 @@ function Light({ children }: IProps) {
   return (
     <>
       <Header />
-      <h3>Light</h3>
       {children}
       <Footer />
     </>

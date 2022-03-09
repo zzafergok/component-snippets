@@ -1,4 +1,3 @@
-import React from "react";
 import Dark from "./dark";
 import Light from "./light";
 
