@@ -1,39 +1,53 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React from "react";
+import { Link } from "react-router-dom";
+import { containerStyle, linkStyle } from "./header";
 
-type Props = {};
+function Footer() {
+  const footerStyle = css`
+    display: flex;
+    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: var(--footer-background-color);
+    height: 5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
-function Footer({}: Props) {
+    .footer-container {
+      width: 70% !important;
+    }
+  `;
   return (
-    <footer
-      css={{
-        position: "fixed",
-        left: 0,
-        bottom: 0,
-        width: "100%",
-        backgroundColor: "darkgoldenrod",
-        color: "white",
-        textAlign: "center",
-        height: "5rem",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <p>Home</p>
-          </div>
-          <div className="col-md-4">
-            <p>Components</p>
-          </div>
-          <div className="col-md-4">
-            <p>Contact</p>
+    <>
+      <footer css={footerStyle}>
+        <div className="footer-container " css={containerStyle}>
+          <div>
+            <nav>
+              <Link css={linkStyle} to="/">
+                Home
+              </Link>
+            </nav>
+            <nav>
+              <Link css={linkStyle} to="/components">
+                Component
+              </Link>
+            </nav>
+            <nav>
+              <Link css={linkStyle} to="/documents">
+                Documents
+              </Link>
+            </nav>
+            <nav>
+              <Link css={linkStyle} to="/contact">
+                Contact
+              </Link>
+            </nav>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
 
