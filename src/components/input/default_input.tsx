@@ -1,28 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css, CSSObject } from "@emotion/react";
-import React from "react";
-import { Props } from "../../modules/input";
+import { InputProps } from "../../modules/input";
 
-export const defaultInputStyle: CSSObject = {
-    // width: width ? `${width}rem !important` : "40%",
-    // height: height ? `${height}rem !important` : "2.5rem",
-    border: "1px solid #ccc",
-    borderRadius: "0.25rem",
-    padding: "0.5rem",
-    fontSize: "1rem",
-    fontWeight: 200,
-    color: "#333",
-    backgroundColor: "#fff",
-    boxShadow: "0 0 1rem rgba(0, 0, 0, 0.05)",
-    outline: "none",
-    transition: "all 0.3s ease-in-out",
-    "&:focus": {
-      borderColor: "#ffad05",
-      boxShadow: "0 0 0.5rem rgba(0, 0, 0, 0.2)",
-    },
-  };
+const defaultInputStyle = css`
+  border: 1px solid var(--default-border-color);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
 
-function DefaultInput(Props) {
+  &:focus: {
+    border-color: var(--input-border-color);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
+`;
+
+function DefaultInput(InputProps) {
   const {
     className,
     type = "text" as any,
@@ -31,41 +24,73 @@ function DefaultInput(Props) {
     value,
     placeholder,
     onChange,
+    onBlur,
+    onFocus,
+    onKeyPress,
     disabled = false,
     required = false,
+    min,
+    max,
+    step,
     minLength,
     maxLength,
     pattern,
+    size,
     autoComplete = "off",
     autoFocus = false,
     spellCheck,
     autoSave,
+    list,
+    multiple,
+    alt,
+    src,
     width = "40",
-    height = "2.5",
-  } = Props;
+    height = "2",
+    icon,
+    defaultValue,
+  } = InputProps;
 
   return (
-    <>
+    <div>
       <input
-        css={defaultInputStyle, { width: width && `${width}%`, height: height && `${height}rem` }}
+        css={
+          (defaultInputStyle,
+          {
+            width: width && `${width}%`,
+            height: height && `${height}rem`,
+          })
+        }
         className={className}
         type={type}
         id={id}
         name={name}
         value={value}
+        defaultValue={defaultValue}
         placeholder={placeholder}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onKeyPress={onKeyPress}
         onChange={onChange}
         disabled={disabled}
         required={required}
+        min={min}
+        max={max}
+        step={step}
         minLength={minLength}
         maxLength={maxLength}
         pattern={pattern}
+        size={size}
         autoComplete={autoComplete}
         autoFocus={autoFocus}
         spellCheck={spellCheck}
         autoSave={autoSave}
+        list={list}
+        multiple={multiple}
+        alt={alt}
+        src={src}
+        icon={icon}
       />
-    </>
+    </div>
   );
 }
 
