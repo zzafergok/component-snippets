@@ -1,0 +1,18 @@
+:root {
+  /* background-color */
+  --header-background-color: #ffad05;
+  --footer-background-color: #ff7f3f;
+
+  /* border-color */
+  --default-border-color: #3b3b3b;
+  --input-border-color: #ea5c2b;
+
+  /* font-family */
+  --primary-font-family: "Inconsolata", monospace;
+  --secondary-font-family: "Montserrat", sans-serif;
+  --header-font-family: "Permanent Marker", cursive;
+
+  /* font-color */
+  --primary-font-color: #000;
+  --primary-hover-font-color: #353232;
+}
