@@ -1,17 +1,15 @@
-import SubHeader from "../block/sub_header";
-import FormContainer from "../components/form_container";
+import SubHeader from '../block/sub_header';
 
 function Components() {
-  return (
-    <>
-      <SubHeader
-        leftText="Black Lives Matter"
-        rightText="Stop war in Ukraine"
-      />
-
-      <FormContainer />
-    </>
-  );
+	return (
+		<>
+			<SubHeader
+				leftText="Black Lives Matter"
+				rightText="Stop war in Ukraine"
+				marginBottom="0"
+			/>
+		</>
+	);
 }
 
 export default Components;
