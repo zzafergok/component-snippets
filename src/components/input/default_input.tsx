@@ -31,7 +31,7 @@ function DefaultInput(InputProps) {
 		multiple,
 		alt,
 		src,
-		width = '20%',
+		width = '85%',
 		height = '1.5rem',
 		icon,
 		defaultValue,
