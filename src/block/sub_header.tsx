@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
 type Props = {
 	leftText?: string;
 	rightText?: string;
+	marginBottom?: string;
 };
 
 function SubHeader(Props) {
-	const { leftText, rightText } = Props;
+	const { leftText, rightText, marginBottom } = Props;
 
 	const containerStyle = css`
 		div {
@@ -28,7 +29,7 @@ function SubHeader(Props) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 2rem;
+		margin-bottom: ${marginBottom} ? ${marginBottom} : 2rem;
 		height: 2.5rem;
 	`;
 
