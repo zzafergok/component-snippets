@@ -4,6 +4,7 @@ import { ButtonProps } from '../../modules/button.ts';
 
 function DefaultButton({
 	text = 'Ok',
+	className,
 	onClick,
 	color = 'white',
 	backgroundColor = 'black',
@@ -14,7 +15,7 @@ function DefaultButton({
 	radius = '12px',
 }: ButtonProps) {
 	const buttonWidth = () => {
-		if (text.length < 3) {
+		if (text.length < 3 && text.length > 0) {
 			return text.length * 2.25 + 'rem';
 		} else if (text.length > 3) {
 			return text.length * 1 + 'rem';
@@ -23,14 +24,11 @@ function DefaultButton({
 		}
 	};
 
-	console.log(buttonWidth());
-	width = buttonWidth();
-
 	const defaultButtonStyle = css`
 		color: ${color};
 		background-color: ${backgroundColor};
 		height: ${height};
-		width: ${width};
+		width: ${width ? width : buttonWidth()};
 		border: ${border};
 		border-radius: ${radius};
 		display: flex;
@@ -46,7 +44,7 @@ function DefaultButton({
 		if (text && !icon) {
 			return text;
 		} else if (!text && icon) {
-			return <i className={icon} css={iconStyle} />;
+			return <i className={icon} />;
 		} else if (text && icon) {
 			return (
 				<>
@@ -61,7 +59,7 @@ function DefaultButton({
 
 	return (
 		<div>
-			<button onClick={onClick} css={defaultButtonStyle}>
+			<button className={className} onClick={onClick} css={defaultButtonStyle}>
 				{renderDefaultButton()}
 			</button>
 		</div>
