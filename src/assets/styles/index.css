@@ -11,16 +11,24 @@ p,
 div,
 span,
 button {
-  font-family: var(--primary-font-family);
-  font-weight: 400;
+	font-family: var(--primary-font-family);
+	font-weight: 400;
 }
 
 a {
-  color: var(--primary-font-color);
-  border-bottom: 2px solid transparent;
-  text-decoration: none;
+	color: var(--primary-font-color);
+	border-bottom: 2px solid transparent;
+	text-decoration: none;
 }
 
 a:hover {
-  border-bottom: 2px solid var(--default-border-color);
+	border-bottom: 2px solid var(--default-border-color);
+}
+
+.side-menu {
+	font-size: 1.45rem;
+}
+
+.side-menu:hover {
+	color: var(--header-background-color);
 }
